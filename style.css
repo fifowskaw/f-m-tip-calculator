@@ -1,0 +1,278 @@
+:root {
+    --color-strong-cyan: hsl(172, 67%, 45%);
+    --color-strong-cyan-light: hsl(172, 72%, 53%);
+    --color-very-dark-cyan: hsl(183, 100%, 15%);
+    --color-very-dark-cyan-grayish: hsl(181, 65%, 26%);
+    --dark-grayish-cyan: hsl(186, 14%, 43%);
+    --grayish-cyan: hsl(184, 14%, 56%);
+    --light-grayish-cyan: hsl(185, 41%, 84%);
+    --very-light-grayish-cyan: hsl(189, 41%, 97%);
+    --white: hsl(0, 0%, 100%);
+
+    --color-red: rgb(211, 128, 128);
+}
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+    font-family: "Space Mono", monospace;
+}
+.attribution {
+    position: absolute;
+    bottom: 0;
+    font-size: 11px;
+    text-align: center;
+}
+.attribution a {
+    text-decoration: none;
+    color: hsl(228, 45%, 44%);
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+
+    background-color: var(--light-grayish-cyan);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+header {
+    position: absolute;
+    top: 10%;
+}
+
+main {
+    width: 700px;
+    height: 400px;
+
+    border-radius: 20px;
+
+    box-shadow: 10px 10px 50px var(--grayish-cyan);
+    background-color: var(--white);
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.chooser,
+.result {
+    margin: 20px;
+}
+.chooser {
+    position: relative;
+    margin: 30px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    background-color: transparent;
+
+    color: var(--dark-grayish-cyan);
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.chooser label {
+    color: var(--grayish-cyan);
+    font-size: 18px;
+    background-color: transparent;
+    width: 20px;
+    height: 20px;
+}
+.chooser .bill-label {
+    position: absolute;
+    right: 10px;
+    top: 33px;
+}
+.chooser .people-label {
+    position: absolute;
+    right: 10px;
+    top: 139px;
+}
+.bill_input:focus ~ .bill-label,
+.bill_input:not(:placeholder-shown) ~ .bill-label,
+.number_of_people_input:focus ~ .people-label,
+.number_of_people_input:not(:placeholder-shown) ~ .people-label {
+    color: transparent;
+}
+
+.bill_input,
+.number_of_people_input {
+    width: 100%;
+    height: 12%;
+    padding-left: 75%;
+    margin-bottom: 10%;
+
+    color: var(--color-very-dark-cyan);
+    font-size: 15px;
+    font-weight: 700;
+
+    border-radius: 5px;
+    border: 2px solid transparent;
+    background-color: var(--very-light-grayish-cyan);
+    background-repeat: no-repeat;
+    background-position: 5%;
+}
+.bill_input {
+    background-image: url("/images/icon-dollar.svg");
+}
+.number_of_people_input {
+    background-image: url("/images/icon-person.svg");
+    padding-left: 85%;
+}
+.bill_input:hover,
+.number_of_people_input:hover {
+    border: 2px solid var(--color-strong-cyan);
+}
+
+.info-element {
+    position: absolute;
+    right: -5px;
+    width: 130px;
+    height: 20px;
+
+    font-size: 14px;
+    color: var(--color-red);
+}
+
+.tip_buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 50px 50px;
+}
+.tip_buttons button {
+    margin-top: 7.5px;
+    margin-left: 4px;
+    width: 90px;
+    height: 35px;
+
+    color: var(--very-light-grayish-cyan);
+    font-size: 15px;
+    font-weight: 700;
+
+    border: none;
+    border-radius: 5px;
+    background-color: var(--color-very-dark-cyan);
+    cursor: pointer;
+}
+.tip_buttons button:hover {
+    background-color: var(--color-strong-cyan-light);
+    color: var(--color-very-dark-cyan);
+}
+
+.tip_buttons .button-custom {
+    position: relative;
+    background-color: var(--very-light-grayish-cyan);
+    padding-left: 12px;
+}
+
+.tip_buttons .custom {
+    width: 90%;
+    height: 90%;
+
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--color-very-dark-cyan);
+    border: none;
+    background: transparent;
+}
+.tip_buttons .custom::placeholder {
+    color: var(--color-very-dark-cyan);
+}
+.custom:not(:placeholder-shown) ~ .button-custom {
+    border: 2px solid red;
+}
+
+.result {
+    position: relative;
+    max-width: 310px;
+    color: var(--very-light-grayish-cyan);
+
+    border-radius: 20px;
+    background-color: var(--color-very-dark-cyan);
+}
+.result_amount,
+.result_total {
+    margin-top: 30px;
+    margin-left: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+.result_amount_desc,
+.result_total_desc {
+    width: 150px;
+
+    display: flex;
+    flex-direction: column;
+}
+.result_amount_desc strong,
+.result_total_desc strong {
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+.result_amount_desc span,
+.result_total_desc span {
+    font-size: 13px;
+    color: var(--grayish-cyan);
+}
+
+.result_amount_value,
+.result_total_value {
+    margin-right: 20px;
+    font-size: 35px;
+    font-weight: 700;
+    color: var(--color-strong-cyan);
+}
+
+.result button {
+    position: absolute;
+    left: 10%;
+    bottom: 20px;
+
+    width: 80%;
+    height: 13%;
+
+    color: var(--color-very-dark-cyan);
+    font-size: 20px;
+    font-weight: 700;
+
+    border: none;
+    border-radius: 5px;
+    background-color: var(--color-strong-cyan);
+    cursor: pointer;
+}
+.result button:hover {
+    background-color: var(--color-strong-cyan-light);
+}
+.result button:disabled {
+    cursor: auto;
+    background-color: var(--color-very-dark-cyan-grayish);
+}
+
+@media screen and (max-width: 480px) {
+    body {
+        justify-content: flex-end;
+    }
+    header {
+        top: 30px;
+    }
+    main {
+        width: 100vw;
+        height: 550px;
+        grid-template-columns: 1fr;
+
+        overflow: scroll;
+    }
+    .chooser,
+    .result {
+        height: 300px;
+    }
+    .attribution {
+        top: 1px;
+    }
+}
