@@ -22,11 +22,14 @@
     </head>
     <body>
         <header>
+            <h1 class="hidden">Splitter</h1>
             <img src="/images/logo.svg" alt="" class="header_img" />
         </header>
         <main>
+            <h2 class="hidden">Chooser</h2>
             <section class="chooser">
                 <span class="chooser-bill">Bill </span>
+                <label for="bill" class="hidden">Bill input</label>
                 <input
                     type="number"
                     class="bill_input"
@@ -35,6 +38,9 @@
                 />
                 <label class="bill-label" for="bill">0</label>
                 <span class="chooser-number">Number of People </span>
+                <label for="people" class="hidden"
+                    >Number of People input</label
+                >
                 <input
                     type="number"
                     class="number_of_people_input"
@@ -48,7 +54,7 @@
                     <button>10%</button>
                     <button>15%</button><button>25%</button>
                     <button>50%</button>
-                    <button class="button-custom" index="button-custom">
+                    <button class="button-custom">
                         <input
                             class="custom"
                             type="number"
@@ -57,6 +63,7 @@
                     </button>
                 </div>
             </section>
+            <h2 class="hidden">Result</h2>
             <section class="result">
                 <div class="result_amount">
                     <div class="result_amount_desc">
@@ -73,7 +80,7 @@
                 <button class="reset" disabled>RESET</button>
             </section>
         </main>
-        <div class="attribution">
+        <footer>
             Challenge by
             <a
                 href="https://www.frontendmentor.io/challenges/tip-calculator-app-ugJNGbJUX"
@@ -82,7 +89,7 @@
             >. Coded by
             <a href="https://www.frontendmentor.io/profile/fifowskaw">Ilsaya</a
             >.
-        </div>
+        </footer>
         <script src="app.js"></script>
     </body>
 </html>

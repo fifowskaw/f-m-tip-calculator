@@ -18,13 +18,13 @@
 
     font-family: "Space Mono", monospace;
 }
-.attribution {
+footer {
     position: absolute;
     bottom: 0;
     font-size: 11px;
     text-align: center;
 }
-.attribution a {
+footer a {
     text-decoration: none;
     color: hsl(228, 45%, 44%);
 }
@@ -252,6 +252,10 @@ main {
 .result button:disabled {
     cursor: auto;
     background-color: var(--color-very-dark-cyan-grayish);
+}
+
+.hidden {
+    display: none;
 }
 
 @media screen and (max-width: 480px) {
